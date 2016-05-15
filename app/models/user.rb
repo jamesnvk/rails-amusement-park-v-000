@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   attr_writer :mood
 
   def mood
-    binding.pry
-    self.nausea > self.happiness ? self.mood = "sad" : self.mood = "happy"
+    if self.nausea && self.happiness
+      self.nausea > self.happiness ? self.mood = "sad" : self.mood = "happy"
+    end
   end
+
 end

@@ -1,0 +1,4 @@
+<h1><%= @attraction.name %></h1>
+<%= form_for(current_user, method: :patch) do |f| %>
+<%=  f.submit "Go on this ride" %>
+<% end %>

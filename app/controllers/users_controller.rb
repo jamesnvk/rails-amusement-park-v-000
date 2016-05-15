@@ -14,6 +14,10 @@ class UsersController < ApplicationController
   end
 
   def update
+    user = User.find_by(id: session[:user_id])
+     # user.take_ride
+     # user.save
+    redirect_to user_path(user)
   end
 
   def edit
@@ -27,6 +31,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    session[:user_id] = @user.id
   end
 
   private
