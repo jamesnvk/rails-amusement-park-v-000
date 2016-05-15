@@ -1,0 +1,6 @@
+<% if logged_in? %>
+  <%= link_to "Log Out", signout_path, method: :delete, class: "navbar-brand" %>
+<% else %>
+  <%= link_to "Sign up", new_user_path, class: "navbar-brand" %>
+  <%= link_to "Sign in", signin_path, class: "navbar-brand" %>
+<% end %>
