@@ -1,4 +1,9 @@
 <h1><%= @attraction.name %></h1>
-<%= form_for(current_user, method: :patch) do |f| %>
+<%= form_for(@ride) do |f| %>
 <%=  f.submit "Go on this ride" %>
 <% end %>
+
+<% if @user.admin == true %>
+  <%= link_to "Edit Attraction", edit_attraction_path %>
+<% end %>
+

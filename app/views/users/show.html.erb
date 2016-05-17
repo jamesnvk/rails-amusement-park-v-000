@@ -1,6 +1,7 @@
 <% if @user.admin == true %>
   <h1>ADMIN</h1>
 <% end %>
+<%= flash[:notice] if flash[:notice] %>
 <h1><%= @user.name %></h1>
 <p> Tickets: <%= @user.tickets %> </p>
 <p> Mood: <%= @user.mood %> </p>
